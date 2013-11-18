@@ -8,6 +8,7 @@ int main(void)
 		printf("woi\n");
 	}
 	
+	printf("jajal ah\n");
 	printf("blah!\n");
 	return(0);
 }
