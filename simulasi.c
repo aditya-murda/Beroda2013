@@ -22,7 +22,7 @@ void rPwm(int speedLeft, int speedRight)
 int main ()
 {
 	int front, back, encLeftTick;
-//	int	leftFront, rightFront;
+	int	leftFront, rightFront;
 	
 	mLeft = MOTORInit(MOTOR_LEFT);
 	mRight = MOTORInit(MOTOR_RIGHT);
@@ -33,29 +33,37 @@ int main ()
 	pFront = PSDInit(PSD_FRONT);
 	pBack = PSDInit(PSD_BACK);
     
-    /*pLeftFront= PSDInit (PSD_LEFTFRONT);
-    pRightFront= PSDInit (PSD_RIGHTFRONT);*/
+    pLeftFront = PSDInit(PSD_FRONTLEFT);
+    pRightFront = PSDInit(PSD_FRONTRIGHT);
 
 	
 	PSDStart(pFront|pBack, TRUE); 
-  // PSDStart (pLeftFront|pRightFront, TRUE);	
+	PSDStart (pLeftFront|pRightFront, TRUE);	
 	while(1)
 	{	
-		rPwm(30,30);
+		rPwm(60, 60);
 		front = PSDGet(pFront);
 		back = PSDGet(pBack);
-		//leftFront = PSDGet(pLeftFront);
-		//rightFront = PSDGet(pRightFront);	
+		leftFront = PSDGet(pLeftFront);
+		rightFront = PSDGet(pRightFront);	
 	 
-     	/*if (front < 200){
-                  rPwm(50, -50);
-                  //OSWait(50);
-                  
-                  } */
+		if (front < 350 || leftFront < 150){
+            rPwm(50, 30);
+            OSWait(1);
+			
+			/*if(leftFront > 300) {
+				OSWait(10);
+				rPwm(20, 50);
+				OSWait(1);
+			}*/
+        }
+		
         encLeftTick = QUADRead(encoderLeft);
 		LCDPrintf("Depan: %d\n", front);
 		LCDPrintf("Belakang: %d\n", back);
 		LCDPrintf("Encoder: %d\n", encLeftTick);
+		LCDPrintf("kiri: %d\n", leftFront);
+		LCDPrintf("kanan: %d\n", rightFront);
 		
         OSWait(10);
 		LCDClear();
