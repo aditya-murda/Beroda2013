@@ -57,7 +57,7 @@ int main ()
 				OSWait(1);
 			}*/
         }
-		
+		//aaaaa
         encLeftTick = QUADRead(encoderLeft);
 		LCDPrintf("Depan: %d\n", front);
 		LCDPrintf("Belakang: %d\n", back);
