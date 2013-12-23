@@ -1,0 +1,12 @@
+VERSION:3 SOURCE_TIMESTAMP:4397A859
+NODE:I LEVEL:0 LINE:6 "D:\belajar\TRUI\jajal\jajal 10, 9 12 2013 (uvtron)\uvtron.h"
+NODE:I LEVEL:0 LINE:10 "C:\cvavr2\inc\lcd.h"
+NODE:I LEVEL:0 LINE:11 "C:\cvavr2\inc\delay.h"
+NODE:I LEVEL:0 LINE:12 "C:\cvavr2\inc\stdlib.h"
+NODE:V LEVEL:0 LINE:14 "lcd -> RAM:????"
+NODE:V LEVEL:0 LINE:15 "photon -> R3,R4"
+NODE:F LEVEL:0 LINE:17 "uvtronInit(void)"
+NODE:F LEVEL:0 LINE:23 "uvtronOn(void)"
+NODE:F LEVEL:0 LINE:41 "uvtronOff(void)"
+NODE:F LEVEL:0 LINE:58 "uvtronScan(unsigned int time)"
+NODE:F LEVEL:0 LINE:98 "ext_int4_isr(void)"
